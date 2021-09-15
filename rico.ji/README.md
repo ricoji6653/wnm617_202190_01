@@ -3,7 +3,7 @@
 ## Important Links
 
 - http://ricoricoyeah.com
-- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji
+- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/
 
 ## Perhaps Some Notes
 
