@@ -1,20 +1,29 @@
 :root {
-    --color-neutral-light: #f3f3f3;
+    --color-neutral-light: #ddd;
     --color-neutral-medium: #999;
-    --color-neutral-dark: #333638;
+    --color-neutral-dark: #444;
 
-    --color-main-light: #caf0f8;
-    --color-main-medium: #48cae4;
-    --color-main-dark: #023e8a;
+    --color-main-light: #def2f9;
+    --color-main-medium: #40a3c4;
+    --color-main-dark: #0f4557;
 
     --color-white: #fff;
+    --color-black: #111;
+
+
+    --font-sans: Helvetica, Arial, sans-serif;
+    --font-serif: Cambria, Georgia, serif;
 
     --header-height:  3rem;
-
 }
 
 * {
     box-sizing: border-box;
+}
+
+
+body {
+   font-family: var(--font-sans);
 }
 
 
@@ -45,15 +54,36 @@ a {
 .flex-vertical { flex-direction:column; }
 
 
+.overscroll { overflow: auto; }
+.overscroll-x { overflow-x: auto; }
+.overscroll-y { overflow-y: auto; }
+
+.fill-parent {
+   width: 100%;
+   height: 100%;
+}
+
+.centered { text-align:center; }
+.small { font-size: 0.8em; }
+
+
 
 /* PAGE ELEMENTS */
 .ui-mobile .ui-page-active {
    display: flex;
    flex-direction: column;
+   height: 100%;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   overflow: hidden;
 }
 
 [data-role="main"] {
    flex: 1 1 100%;
+   position: relative;
+   overflow: hidden;
 }
 [data-role="header"],
 [data-role="footer"] {
@@ -107,7 +137,7 @@ a {
 .form-control {
    margin: 1em 0;
 }
-.form-input {
+.signin-form .form-input {
     width: 100%;
     display: inline-block;
     border: 1px solid var(--color-neutral-medium);
@@ -117,6 +147,18 @@ a {
     outline: 0;
     font: inherit;
 }
+.form-input {
+    width: 100%;
+    display: inline-block;
+    border-width: 0;
+    border-bottom: 1px solid var(--color-neutral-medium);
+    margin: 0;
+    padding: 0.5em 1em;
+    outline: 0;
+    background-color: transparent;
+    font: inherit;
+}
+.form .form-button,
 .form-button {
     width: 100%;
     display: inline-block;
@@ -131,4 +173,148 @@ a {
     cursor: pointer;
     text-decoration: none;
 }
-.form-label {}
+.ui-mobile .form-label {
+   font-size: 0.8em;
+   color: var(--color-neutral-medium);
+   margin: 1rem 0 0;
+}
+
+
+
+
+
+
+
+
+.map {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url(../img/map.png);
+   background-size: cover;
+   background-position: center;
+}
+
+
+
+
+
+
+/* Floater */
+.floater { position:absolute; }
+.floater.left { left:1em; }
+.floater.right { right:1em; }
+.floater.top { top:1em; }
+.floater.bottom { bottom:1em; }
+
+/* Circle Button */
+.btn-circle {
+   display: inline-block;
+   background-color: var(--color-white);
+   width: 3rem;
+   height: 3rem;
+   line-height: 3rem;
+   text-align: center;
+   font-size: 2.4rem;
+   border-radius: 2em;
+   box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+
+
+
+
+
+/* MODAL */
+.modal {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   pointer-events: none;
+   opacity: 0;
+   transition: all 0.3s;
+}
+.modal.active {
+   pointer-events: initial;
+   opacity: 1;
+}
+.modal-back {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.7);
+}
+
+/* Modal Popup */
+.modal-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,calc(-50% + 3em));
+    border-radius: 5px;
+    width: 80vmin;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.modal-body {
+    padding: 10px;
+    background-color: var(--color-white);
+}
+.modal-head,
+.modal-foot {
+    background-color: var(--color-neutral-light);
+    line-height: 2rem;
+    padding: 0 1em;
+}
+.modal.active .modal-popup {
+   transform: translate(-50%,-50%);
+}
+
+
+
+/* Modal Drawer */
+.modal-drawer {
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   transition: all 0.3s;
+   box-shadow: 0 0 5px rgba(0,0,0,0.15);
+}
+.modal-drawer.left,
+.modal-drawer.right {
+   height: 100%;
+   width: 70vw;
+}
+.modal-drawer.left { left: 0; transform:translateX(-100%); }
+.modal-drawer.right { right: 0; transform:translateX(100%); }
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+   height: 40vh;
+   width: 100%;
+}
+.modal-drawer.top { top: 0; transform:translateY(-100%); }
+.modal-drawer.bottom { bottom: 0; transform:translateY(100%); }
+
+.modal.active .modal-drawer {
+   transform: translate(0);
+}
+
+
+.modal-drawer .modal-body {
+   flex: 1 1 100%;
+}
+
+
+
+
+.icon {
+   width: 1em;
+   height: 1em;
+   display: inline-block;
+}
