@@ -14,6 +14,10 @@
 - http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/
 - http://ricoricoyeah.com/wnm617/aau/wnm617/demo/jquerymobile.html
 
+## Midterm Project
+
+- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/#page-signin
+
 ## Perhaps Some Notes
 
 - Take “！” For HTML

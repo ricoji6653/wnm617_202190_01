@@ -7,13 +7,13 @@ const checkSigninForm = () => {
    console.log(user,pass);
 
    if(user == 'user' && pass == 'pass') {
-      // logged in
-      console.log("success");
+      //logged in
+      console.log ("success");
       sessionStorage.userId = 3;
       $("#signin-form")[0].reset();
    } else {
-      // not logged in
-      console.log("failure");
+      //not logged in
+      console.log ("failure");
       sessionStorage.removeItem('userId');
    }
    checkUserId();
@@ -23,13 +23,13 @@ const checkSigninForm = () => {
 const checkUserId = () => {
    let p = ['#page-signin','#page-signup',''];
 
-   if(sessionStorage.userId === undefined) {
-      // not logged in
+   if (sessionStorage.userId === undefined) {
+      //not logged in
       if(!p.some(o=>window.location.hash===o))
-            $.mobile.navigate("#page-signin");
+         $.mobile.navigate("#page-signin");
    } else {
-      // logged in
+      //are logged in
       if(p.some(o=>window.location.hash===o))
-            $.mobile.navigate("#page-recent");
+         $.mobile.navigate("#page-map");
    }
 }
