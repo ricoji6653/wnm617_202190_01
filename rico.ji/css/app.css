@@ -34,7 +34,6 @@ p {
 
 
 
-
 /*Core Element*/
 a {
    color: inherit;
@@ -169,7 +168,7 @@ a {
 
 .form {}
 .form-control {
-   margin: 1em 0;
+   margin: 1.5em 0;
 }
 .signin-form .form-input {
     width: 100%;
