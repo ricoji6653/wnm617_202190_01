@@ -2,7 +2,7 @@
 
 ## Important Links
 
-- http://ricoricoyeah.com
+- https://www.aaronaaronyeah.com/
 - http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/
 
 ## Side Assignment
