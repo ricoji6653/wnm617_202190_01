@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "name": "Fanfare",
+    "type": "medium",
+    "breed": "vizsla",
+    "img": "https://via.placeholder.com/400/863/fff/?text=undefined",
+    "date_create": "2021-06-11 03:48:41"
+  },
+  {
+    "id": 2,
+    "user_id": 7,
+    "name": "Xplor",
+    "type": "small",
+    "breed": "pug",
+    "img": "https://via.placeholder.com/400/883/fff/?text=undefined",
+    "date_create": "2020-12-03 03:14:31"
+  },
+  {
+    "id": 3,
+    "user_id": 4,
+    "name": "Kenegy",
+    "type": "large",
+    "breed": "mountain dog",
+    "img": "https://via.placeholder.com/400/705/fff/?text=undefined",
+    "date_create": "2020-10-23 04:26:48"
+  },
+  {
+    "id": 4,
+    "user_id": 1,
+    "name": "Andershun",
+    "type": "small",
+    "breed": "pug",
+    "img": "https://via.placeholder.com/400/776/fff/?text=undefined",
+    "date_create": "2021-07-23 06:55:31"
+  },
+  {
+    "id": 5,
+    "user_id": 9,
+    "name": "Xiix",
+    "type": "medium",
+    "breed": "bulldog",
+    "img": "https://via.placeholder.com/400/714/fff/?text=undefined",
+    "date_create": "2021-08-03 06:43:58"
+  },
+  {
+    "id": 6,
+    "user_id": 1,
+    "name": "Sunclipse",
+    "type": "medium",
+    "breed": "bulldog",
+    "img": "https://via.placeholder.com/400/886/fff/?text=undefined",
+    "date_create": "2020-01-19 09:21:54"
+  },
+  {
+    "id": 7,
+    "user_id": 7,
+    "name": "Liquidoc",
+    "type": "large",
+    "breed": "afghan hound",
+    "img": "https://via.placeholder.com/400/835/fff/?text=undefined",
+    "date_create": "2020-04-16 05:23:33"
+  },
+  {
+    "id": 8,
+    "user_id": 1,
+    "name": "Strozen",
+    "type": "large",
+    "breed": "mountain dog",
+    "img": "https://via.placeholder.com/400/843/fff/?text=undefined",
+    "date_create": "2021-08-24 06:57:31"
+  },
+  {
+    "id": 9,
+    "user_id": 8,
+    "name": "Zounds",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/802/fff/?text=undefined",
+    "date_create": "2021-04-04 04:41:10"
+  },
+  {
+    "id": 10,
+    "user_id": 3,
+    "name": "Jimbies",
+    "type": "small",
+    "breed": "pug",
+    "img": "https://via.placeholder.com/400/877/fff/?text=undefined",
+    "date_create": "2021-07-24 04:03:17"
+  },
+  {
+    "id": 11,
+    "user_id": 3,
+    "name": "Barkarama",
+    "type": "medium",
+    "breed": "border collie",
+    "img": "https://via.placeholder.com/400/956/fff/?text=undefined",
+    "date_create": "2020-01-04 01:44:37"
+  },
+  {
+    "id": 12,
+    "user_id": 7,
+    "name": "Kraggle",
+    "type": "large",
+    "breed": "alaskan malamute",
+    "img": "https://via.placeholder.com/400/813/fff/?text=undefined",
+    "date_create": "2020-05-11 07:57:12"
+  },
+  {
+    "id": 13,
+    "user_id": 5,
+    "name": "Translink",
+    "type": "medium",
+    "breed": "vizsla",
+    "img": "https://via.placeholder.com/400/942/fff/?text=undefined",
+    "date_create": "2021-05-29 12:25:23"
+  },
+  {
+    "id": 14,
+    "user_id": 5,
+    "name": "Motovate",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/720/fff/?text=undefined",
+    "date_create": "2020-07-10 10:17:55"
+  },
+  {
+    "id": 15,
+    "user_id": 3,
+    "name": "Isologix",
+    "type": "large",
+    "breed": "beauceron",
+    "img": "https://via.placeholder.com/400/801/fff/?text=undefined",
+    "date_create": "2020-09-17 05:01:28"
+  },
+  {
+    "id": 16,
+    "user_id": 1,
+    "name": "Primordia",
+    "type": "large",
+    "breed": "mountain dog",
+    "img": "https://via.placeholder.com/400/953/fff/?text=undefined",
+    "date_create": "2020-05-02 03:26:52"
+  },
+  {
+    "id": 17,
+    "user_id": 5,
+    "name": "Furnigeer",
+    "type": "small",
+    "breed": "pug",
+    "img": "https://via.placeholder.com/400/909/fff/?text=undefined",
+    "date_create": "2020-09-17 11:30:58"
+  },
+  {
+    "id": 18,
+    "user_id": 1,
+    "name": "Quantasis",
+    "type": "medium",
+    "breed": "vizsla",
+    "img": "https://via.placeholder.com/400/990/fff/?text=undefined",
+    "date_create": "2021-07-25 09:45:18"
+  },
+  {
+    "id": 19,
+    "user_id": 10,
+    "name": "Tubesys",
+    "type": "small",
+    "breed": "toy poodle",
+    "img": "https://via.placeholder.com/400/784/fff/?text=undefined",
+    "date_create": "2021-09-22 06:41:32"
+  },
+  {
+    "id": 20,
+    "user_id": 4,
+    "name": "Inrt",
+    "type": "medium",
+    "breed": "vizsla",
+    "img": "https://via.placeholder.com/400/734/fff/?text=undefined",
+    "date_create": "2020-01-23 12:24:09"
+  },
+  {
+    "id": 21,
+    "user_id": 2,
+    "name": "Namebox",
+    "type": "large",
+    "breed": "mountain dog",
+    "img": "https://via.placeholder.com/400/829/fff/?text=undefined",
+    "date_create": "2020-08-22 03:46:52"
+  },
+  {
+    "id": 22,
+    "user_id": 3,
+    "name": "Rooforia",
+    "type": "small",
+    "breed": "pomeranian",
+    "img": "https://via.placeholder.com/400/962/fff/?text=undefined",
+    "date_create": "2021-10-11 08:38:51"
+  },
+  {
+    "id": 23,
+    "user_id": 8,
+    "name": "Snacktion",
+    "type": "medium",
+    "breed": "border collie",
+    "img": "https://via.placeholder.com/400/912/fff/?text=undefined",
+    "date_create": "2021-05-01 01:01:51"
+  },
+  {
+    "id": 24,
+    "user_id": 1,
+    "name": "Namegen",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/928/fff/?text=undefined",
+    "date_create": "2020-05-28 07:16:51"
+  },
+  {
+    "id": 25,
+    "user_id": 7,
+    "name": "Panzent",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/999/fff/?text=undefined",
+    "date_create": "2020-10-15 09:54:47"
+  },
+  {
+    "id": 26,
+    "user_id": 9,
+    "name": "Genesynk",
+    "type": "large",
+    "breed": "beauceron",
+    "img": "https://via.placeholder.com/400/857/fff/?text=undefined",
+    "date_create": "2020-08-26 11:10:09"
+  },
+  {
+    "id": 27,
+    "user_id": 9,
+    "name": "Nebulean",
+    "type": "large",
+    "breed": "afghan hound",
+    "img": "https://via.placeholder.com/400/819/fff/?text=undefined",
+    "date_create": "2021-03-06 10:35:25"
+  },
+  {
+    "id": 28,
+    "user_id": 9,
+    "name": "Mondicil",
+    "type": "medium",
+    "breed": "vizsla",
+    "img": "https://via.placeholder.com/400/921/fff/?text=undefined",
+    "date_create": "2020-07-22 01:45:53"
+  },
+  {
+    "id": 29,
+    "user_id": 9,
+    "name": "Nspire",
+    "type": "small",
+    "breed": "pug",
+    "img": "https://via.placeholder.com/400/797/fff/?text=undefined",
+    "date_create": "2020-12-08 01:54:20"
+  },
+  {
+    "id": 30,
+    "user_id": 9,
+    "name": "Olucore",
+    "type": "medium",
+    "breed": "bulldog",
+    "img": "https://via.placeholder.com/400/955/fff/?text=undefined",
+    "date_create": "2021-02-24 05:40:54"
+  },
+  {
+    "id": 31,
+    "user_id": 3,
+    "name": "Digirang",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/845/fff/?text=undefined",
+    "date_create": "2021-04-18 11:50:32"
+  },
+  {
+    "id": 32,
+    "user_id": 9,
+    "name": "Hairport",
+    "type": "medium",
+    "breed": "airedale terrier",
+    "img": "https://via.placeholder.com/400/824/fff/?text=undefined",
+    "date_create": "2021-09-05 07:29:42"
+  },
+  {
+    "id": 33,
+    "user_id": 10,
+    "name": "Atgen",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/831/fff/?text=undefined",
+    "date_create": "2021-01-02 07:07:43"
+  },
+  {
+    "id": 34,
+    "user_id": 1,
+    "name": "Nixelt",
+    "type": "large",
+    "breed": "alaskan malamute",
+    "img": "https://via.placeholder.com/400/913/fff/?text=undefined",
+    "date_create": "2021-04-30 12:45:03"
+  },
+  {
+    "id": 35,
+    "user_id": 6,
+    "name": "Updat",
+    "type": "small",
+    "breed": "chihuahua",
+    "img": "https://via.placeholder.com/400/960/fff/?text=undefined",
+    "date_create": "2020-06-18 03:13:20"
+  },
+  {
+    "id": 36,
+    "user_id": 8,
+    "name": "Tetak",
+    "type": "large",
+    "breed": "afghan hound",
+    "img": "https://via.placeholder.com/400/993/fff/?text=undefined",
+    "date_create": "2020-04-14 12:32:06"
+  },
+  {
+    "id": 37,
+    "user_id": 5,
+    "name": "Interodeo",
+    "type": "small",
+    "breed": "pomeranian",
+    "img": "https://via.placeholder.com/400/833/fff/?text=undefined",
+    "date_create": "2020-04-06 09:17:07"
+  },
+  {
+    "id": 38,
+    "user_id": 1,
+    "name": "Globoil",
+    "type": "medium",
+    "breed": "bulldog",
+    "img": "https://via.placeholder.com/400/843/fff/?text=undefined",
+    "date_create": "2021-05-21 04:11:24"
+  },
+  {
+    "id": 39,
+    "user_id": 3,
+    "name": "Essensia",
+    "type": "large",
+    "breed": "akita",
+    "img": "https://via.placeholder.com/400/925/fff/?text=undefined",
+    "date_create": "2021-06-21 10:26:01"
+  },
+  {
+    "id": 40,
+    "user_id": 5,
+    "name": "Geeketron",
+    "type": "medium",
+    "breed": "shar pei",
+    "img": "https://via.placeholder.com/400/935/fff/?text=undefined",
+    "date_create": "2020-11-03 04:32:09"
+  },
+  {
+    "id": 41,
+    "user_id": 3,
+    "name": "Aclima",
+    "type": "small",
+    "breed": "toy poodle",
+    "img": "https://via.placeholder.com/400/799/fff/?text=undefined",
+    "date_create": "2020-02-09 10:34:56"
+  },
+  {
+    "id": 42,
+    "user_id": 10,
+    "name": "Balooba",
+    "type": "medium",
+    "breed": "airedale terrier",
+    "img": "https://via.placeholder.com/400/815/fff/?text=undefined",
+    "date_create": "2021-01-06 05:03:04"
+  },
+  {
+    "id": 43,
+    "user_id": 1,
+    "name": "Mobildata",
+    "type": "medium",
+    "breed": "shar pei",
+    "img": "https://via.placeholder.com/400/985/fff/?text=undefined",
+    "date_create": "2020-10-29 11:40:27"
+  },
+  {
+    "id": 44,
+    "user_id": 9,
+    "name": "Telepark",
+    "type": "large",
+    "breed": "afghan hound",
+    "img": "https://via.placeholder.com/400/864/fff/?text=undefined",
+    "date_create": "2021-03-24 07:03:58"
+  },
+  {
+    "id": 45,
+    "user_id": 1,
+    "name": "Zialactic",
+    "type": "medium",
+    "breed": "shar pei",
+    "img": "https://via.placeholder.com/400/981/fff/?text=undefined",
+    "date_create": "2021-09-24 03:17:52"
+  },
+  {
+    "id": 46,
+    "user_id": 2,
+    "name": "Thredz",
+    "type": "medium",
+    "breed": "border collie",
+    "img": "https://via.placeholder.com/400/986/fff/?text=undefined",
+    "date_create": "2020-06-07 08:52:02"
+  },
+  {
+    "id": 47,
+    "user_id": 9,
+    "name": "Rugstars",
+    "type": "large",
+    "breed": "afghan hound",
+    "img": "https://via.placeholder.com/400/960/fff/?text=undefined",
+    "date_create": "2021-01-11 09:42:59"
+  },
+  {
+    "id": 48,
+    "user_id": 10,
+    "name": "Orboid",
+    "type": "large",
+    "breed": "akita",
+    "img": "https://via.placeholder.com/400/787/fff/?text=undefined",
+    "date_create": "2020-02-01 11:10:04"
+  },
+  {
+    "id": 49,
+    "user_id": 6,
+    "name": "Velity",
+    "type": "small",
+    "breed": "pomeranian",
+    "img": "https://via.placeholder.com/400/997/fff/?text=undefined",
+    "date_create": "2020-07-13 05:56:53"
+  },
+  {
+    "id": 50,
+    "user_id": 8,
+    "name": "Vidto",
+    "type": "large",
+    "breed": "beauceron",
+    "img": "https://via.placeholder.com/400/885/fff/?text=undefined",
+    "date_create": "2021-05-25 06:38:47"
+  }
+]
