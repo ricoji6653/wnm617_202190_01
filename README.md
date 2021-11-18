@@ -1,32 +1,5 @@
-# Rico Ji
+WNM 617 2021 Fall Section 01 Onsite
 
-## Important Links
+DON'T EDIT THIS FILE! If you see this in your text editor, you're editing the wrong file.
 
-- https://www.aaronaaronyeah.com/
-- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/
-
-## Side Assignment
-
-- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/initializr/index.html
-
-## Demo Code
-
-- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/
-- http://ricoricoyeah.com/wnm617/aau/wnm617/demo/jquerymobile.html
-
-## Midterm Project
-
-- http://ricoricoyeah.com/wnm617/aau/wnm617/rico.ji/#page-signin
-
-## Perhaps Some Notes
-
-- Take “！” For HTML
-- ls(list)
-- cd (change folder)
-- cd.. (back to folder)
-- git status (check)
-- git add . (add all file)
-- git commit -m "........ README"
-- git version
-Mac hidden folder :
-Select folder shift + com + . 
+This course will require you to push content changes at least once a week. Your progress will be tracked throughout the semester, so make sure you're keeping up with the workload.
