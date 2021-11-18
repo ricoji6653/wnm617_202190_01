@@ -1,19 +1,25 @@
 
 
-const checkSigninForm = () => {
+const checkSigninForm = async() => {
    let user = $("#signin-username").val();
    let pass = $("#signin-password").val();
 
-   console.log(user,pass);
+   if(user==''||pass=='') {
+      // Make a Warning
+   }
 
-   if(user == 'user' && pass == 'pass') {
-      //logged in
-      console.log ("success");
-      sessionStorage.userId = 3;
+   let found_user = await query({
+      type:'check_signin',
+      params:[user,pass]
+   });
+   console.log(found_user);
+
+   if(found_user.result.length > 0) {
+      // logged in
+      sessionStorage.userId = found_user.result[0].id;
       $("#signin-form")[0].reset();
    } else {
-      //not logged in
-      console.log ("failure");
+      // not logged in
       sessionStorage.removeItem('userId');
    }
    checkUserId();
@@ -23,13 +29,13 @@ const checkSigninForm = () => {
 const checkUserId = () => {
    let p = ['#page-signin','#page-signup',''];
 
-   if (sessionStorage.userId === undefined) {
-      //not logged in
+   if(sessionStorage.userId === undefined) {
+      // not logged in
       if(!p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#page-signin");
+            $.mobile.navigate("#page-signin");
    } else {
-      //are logged in
+      // logged in
       if(p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#page-map");
+            $.mobile.navigate("#page-map");
    }
 }
