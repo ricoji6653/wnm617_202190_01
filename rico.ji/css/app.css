@@ -439,3 +439,58 @@ a {
    z-index: 0;
 }
  
+
+/* ANIMAL LIST */
+.animallist {
+   list-style-type: none;
+   margin: 0;
+   padding: 1em;
+}
+.animallist-item~.animallist-item {
+   margin-top: 1em;
+}
+.animallist-item a {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+    border-radius: 1em;
+    overflow: hidden;
+    font-weight: normal;
+}
+.animallist-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+.animallist-item-description {
+}
+.animallist-item-name {
+   font-size: 1.5em;
+}
+.animallist-item-type,
+.animallist-item-breed {
+   font-size: 0.9em;
+}
+
+
+
+
+
+/* ANIMAL PROFILE */
+.animal-profile-top {
+   flex: none;
+   height: 40vh;
+}
+.animal-profile-bottom {
+   flex: 1 1 auto;
+   position: relative;
+}
+
+
+.floating-header {
+   position: absolute;
+   background-color: rgba(255,255,255,0.15);
+   width: 100%;
+   top: 0;
+   left: 0;
+   box-shadow: none;
+}

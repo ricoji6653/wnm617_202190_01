@@ -25,7 +25,10 @@
 
 
 <body>
-   <!-- Sign In Page -->
+   
+
+
+<!-- Sign In Page -->
    
    <section data-role="page" id="page-signin">
       <div data-role="main" class="display-flex flex-vertical">
@@ -63,7 +66,10 @@
       </div>
    </section>
 
-   <!-- Sign Up Page -->
+   
+
+
+<!-- Sign Up Page -->
    
    <section data-role="page" id="page-signup">
       <div data-role="main" class="display-flex flex-vertical">
@@ -103,7 +109,11 @@
       </div>
    </section>
 
-   <!-- Onboarding 1 -->
+   
+
+
+<!-- Onboarding 1 -->
+   
    <section data-role="page" id="page-onboarding-1">
       <div data-role="main" class="display-flex flex-vertical">
          <div class="flex-stretch"></div>
@@ -116,7 +126,8 @@
       </div>
    </section>
 
-   <!-- Onboarding 2 -->
+<!-- Onboarding 2 -->
+   
    <section data-role="page" id="page-onboarding-2">
       <div data-role="main" class="display-flex flex-vertical">
          <div class="flex-stretch"></div>
@@ -128,7 +139,11 @@
       </div>
    </section>
 
-   <!-- Map Main Page -->
+
+
+
+<!-- Map Main Page -->
+   
    <section data-role="page" id="page-map">
       <div data-role="main">
          Map!
@@ -186,66 +201,30 @@
 
 
 
-   <!-- List Page -->
-   <section data-role="page" id="page-list"> 
-      <header data-role="header">
-         <h1>Dog List</h1>
-      </header>
+<!-- List Page -->
+
+   <section data-role="page" id="page-list">
       <div data-role="main">
          <div class="overscroll floater fill-parent">
-            <ul>
-               <li><a href="#page-animal-profile">Dog 1</a></li>
-               <li><a href="#page-animal-profile">Dog 2</a></li>
-               <li><a href="#page-animal-profile">Dog 3</a></li>
-               <li><a href="#page-animal-profile">Dog 4</a></li>
-               <li><a href="#page-animal-profile">Dog 5</a></li>
-               <li><a href="#page-animal-profile">Dog 6</a></li>
-               <li><a href="#page-animal-profile">Dog 7</a></li>
-               <li><a href="#page-animal-profile">Dog 8</a></li>
-               <li><a href="#page-animal-profile">Dog 9</a></li>
-               <li><a href="#page-animal-profile">Dog 10</a></li>
-               <li><a href="#page-animal-profile">Dog 11</a></li>
-               <li><a href="#page-animal-profile">Dog 12</a></li>
-               <li><a href="#page-animal-profile">Dog 13</a></li>
-               <li><a href="#page-animal-profile">Dog 14</a></li>
-               <li><a href="#page-animal-profile">Dog 15</a></li>
-               <li><a href="#page-animal-profile">Dog 16</a></li>
-               <li><a href="#page-animal-profile">Dog 17</a></li>
-               <li><a href="#page-animal-profile">Dog 18</a></li>
-               <li><a href="#page-animal-profile">Dog 19</a></li>
-               <li><a href="#page-animal-profile">Dog 20</a></li>
-               <li><a href="#page-animal-profile">Dog 21</a></li>
-               <li><a href="#page-animal-profile">Dog 22</a></li>
-               <li><a href="#page-animal-profile">Dog 23</a></li>
-               <li><a href="#page-animal-profile">Dog 24</a></li>
-               <li><a href="#page-animal-profile">Dog 25</a></li>
-               <li><a href="#page-animal-profile">Dog 26</a></li>
-               <li><a href="#page-animal-profile">Dog 27</a></li>
-               <li><a href="#page-animal-profile">Dog 28</a></li>
-               <li><a href="#page-animal-profile">Dog 29</a></li>
-               <li><a href="#page-animal-profile">Dog 30</a></li>
-               <li><a href="#page-animal-profile">Dog 31</a></li>
-               <li><a href="#page-animal-profile">Dog 32</a></li>
-               <li><a href="#page-animal-profile">Dog 33</a></li>
-               <li><a href="#page-animal-profile">Dog 34</a></li>
-               <li><a href="#page-animal-profile">Dog 35</a></li>
-               <li><a href="#page-animal-profile">Dog 36</a></li>
-               <li><a href="#page-animal-profile">Dog 37</a></li>
-               <li><a href="#page-animal-profile">Dog 38</a></li>
-               <li><a href="#page-animal-profile">Dog 39</a></li>
-               <li><a href="#page-animal-profile">Dog 40</a></li>
-            </ul>
-            </div>
-          <div class="floater bottom right">
-              <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
-          </div>
+            <div class="animallist"></div>
+         </div>
+
+         <div class="floater bottom right">
+            <a href="#page-animal-add" class="btn-circle">&plus;</a>
+         </div>
       </div>
-
       <footer data-role="footer" data-template="#footer-template"></footer>
-
-       
-
    </section>
+
+   <section data-role="page" id="page-user-profile">
+      <div data-role="main" class="overscroll"></div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+   </section>
+
+
+
+
+<!-- Edit Profile Page -->
 
    <section data-role="page" id="page-user-profile">
       <header data-role="header">
@@ -274,56 +253,144 @@
 
    </section>
 
-   <!-- Edit Profile Page -->
-   <section data-role="page" id="page-edit-profile">
-      <header data-role="header">
-         <h1>Edit Profile</h1>
+   
 
+
+<!-- ANIMAL PAGES -->
+
+   <section data-role="page" id="page-animal-profile">
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="animal-profile-top">
+            <img src="https://via.placeholder.com/600x600?text=Animal" alt="" style="width:100%;height:100%;object-fit:cover">
+         </div>
+         <div class="animal-profile-middle">
+            <ul class="nav">
+               <li>map</li>
+               <li>description</li>
+            </ul>
+         </div>
+         <div class="animal-profile-bottom">
+            <div class="map"></div>
+            <div class="description"></div>
+         </div>
+      </div>
+      <header data-role="header" class="floating-header">
          <ul>
-            <li><a href="#" data-rel="back"> &lt; </a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-animal-edit">Edit</a></li>
          </ul>
       </header>
-      <div data-role="main" class="display-flex flex-vertical">
-
-         <div>
-            <div class="profile-pic">  </div>
-            <p>Change Profile Picture</p>
-
-            <h2 style="text-align: center;"> John </h2>
-         </div>
-         <div class="flex-stretch"></div>
-         <form data-ajax="false" class="form" id="don-edit-profile" style="padding:20px;">
-            <div class="form-control">
-               <a href="#page-user-profile" class="form-button">Save</a>
-            </div>
-         </form>
-      </div>
    </section>
 
-   <!-- Animal Profile Page -->
-   <section data-role="page" id="page-animal-profile"> 
+   <section data-role="page" id="page-animal-add">
       <header data-role="header">
-         <h1>Dog</h1>
-
+         <h1>Add Animal!</h1>
          <ul>
-            <li class="back-btn"><a href="#" data-rel="back"> &lt; </a></li>
+            <li><a href="#" data-rel="back">Cancel</a></li>
          </ul>
       </header>
       <div data-role="main">
-         <div class="dog-image">
-            Dog
-         </div>
-
-         <div class="flex-stretch"></div>
-         <form data-ajax="false" class="form" id="edit-dog-info" style="padding:20px;">
-            
-            <div class="form-control">
-               <a href="#page-map" class="form-button">Edit Info</a>
+         <form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="animal-add-name" class="form-label">Name</label>
+                     <input type="text" id="animal-add-name" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-add-type" class="form-label">Type</label>
+                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-add-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+               </div>
+            </div>
+            <div class="flex-none padding-md">
+               <!-- <button type="submit" class="form-button">Save</button> -->
+               <a href="#page-list" class="form-button">Save</a>
             </div>
          </form>
       </div>
-
    </section>
+
+   <section data-role="page" id="page-animal-edit">
+      <header data-role="header">
+         <h1>Edit Animal!</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="animal-edit-name" class="form-label">Name</label>
+                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-type" class="form-label">Type</label>
+                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+               </div>
+            </div>
+            <div class="flex-none padding-md">
+               <!-- <button type="submit" class="form-button">Save</button> -->
+               <a href="#page-list" class="form-button">Save</a>
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <section data-role="page" id="page-location-choose-animal">
+      <header data-role="header">
+         <h1>Choose Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-location-set-location">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         Animal!
+      </div>
+   </section>
+
+   <section data-role="page" id="page-location-set-location">
+      <header data-role="header">
+         <h1>Set Location</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-location-description">Next</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         Animal!
+      </div>
+   </section>
+
+   <section data-role="page" id="page-location-description">
+      <header data-role="header">
+         <h1>Description</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-list">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         Animal!
+      </div>
+   </section>
+
 
    <!-- Add New Page -->
    <section data-role="page" id="page-add-new">
