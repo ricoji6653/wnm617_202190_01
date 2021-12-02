@@ -16,11 +16,13 @@
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/map.js"></script>
    <script src="js/signin.js"></script>
    
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
+
 
 
 
@@ -112,33 +114,153 @@
    
 
 
-<!-- Onboarding 1 -->
+<!-- Page Recent -->
    
-   <section data-role="page" id="page-onboarding-1">
-      <div data-role="main" class="display-flex flex-vertical">
-         <div class="flex-stretch"></div>
-         <form data-ajax="false" class="form" id="onboarding-1" style="padding:20px;">
+  <section data-role="page" id="page-recent">
+      <div data-role="main">
+         <div class="map"></div>
 
-            <div class="form-control">
-               <a href="#page-onboarding-2" class="form-button">Next</a>
+         <div class="floater bottom right">
+            <a href="#page-location-choose-animal" class="btn-circle">&plus;</a>
+         </div>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+   </section>
+
+
+<!-- Page List-->
+
+   <section data-role="page" id="page-list">
+      <header data-role="header">
+         <h1>Animal List</h1>
+      </header>
+
+      <div data-role="main">
+         <div class="flex-stretch form-control">
+               <form action="" class="form-search">
+                  <input class="search-bar" type="text" name="search" placeholder="Search" style="margin: 4px -3px;">
+               </form>
+         </div>
+
+         <div class="overscroll floater fill-parent">
+            <div class="animallist"></div>
+         </div>
+
+         <div class="floater bottom right">
+            <a href="#page-animal-add" class="btn-circle">&plus;</a>
+         </div>
+      </div>
+      <footer data-role="footer" data-template="#footer-template"></footer>
+   </section>
+
+<!-- ADD ANIMAL -->
+
+   <section data-role="page" id="page-animal-add">
+      <header data-role="header">
+         <h1>Add Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form class="fill-parent display-flex flex-vertical" id="animal-add-form2" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <input class="form-input-lined" type="text" id="add-animal-name" data-role="none" placeholder="Name"><span class="label-animal-name"></span>
+                  </div>
+                  <div class="form-control">
+                     <input class="form-input-lined" type="text" id="add-animal-type" data-role="none" placeholder="Type"><span class="label-animal-name"></span>
+                  </div>
+                  <div class="form-control">
+                     <input class="form-input-lined" type="text" id="add-animal-breed" data-role="none" placeholder="Breed"><span class="label-animal-breed"></span>
+                  </div>
+               </div>
+            </div>
+            <div class="flex-none padding-md">
+               <!-- <button type="submit" class="form-button">Save</button> -->
+               <a href="#page-list" class="form-button">Save</a>
             </div>
          </form>
       </div>
    </section>
 
-<!-- Onboarding 2 -->
-   
-   <section data-role="page" id="page-onboarding-2">
-      <div data-role="main" class="display-flex flex-vertical">
-         <div class="flex-stretch"></div>
-         <form data-ajax="false" class="form" id="onboarding-2" style="padding:20px;">
-            <div class="form-control">
-               <a href="#page-map" class="form-button">Done</a>
+
+<!-- EDIT ANIMAL -->
+      <section data-role="page" id="page-animal-edit">
+      <header data-role="header">
+         <h1>Edit Animal</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Cancel</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="animal-edit-name" class="form-label">Name</label>
+                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-type" class="form-label">Type</label>
+                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+               </div>
+            </div>
+            <div class="flex-none padding-md">
+               <!-- <button type="submit" class="form-button">Save</button> -->
+               <a href="#page-list" class="form-button">Save</a>
             </div>
          </form>
       </div>
    </section>
 
+<!-- ANIMAL PROFILE -->
+   <section data-role="page" id="page-animal-profile">
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="animal-profile-top">
+            <img src="https://via.placeholder.com/600x600?text=Animal" alt="" style="width:100%;height:100%;object-fit:cover">
+         </div>
+         <div class="animal-profile-middle">
+            <ul class="nav">
+               <li>map</li>
+               <li>description</li>
+            </ul>
+         </div>
+         <div class="animal-profile-bottom">
+            <div class="map"></div>
+            <div class="description"></div>
+         </div>
+      </div>
+      <header data-role="header" class="floating-header">
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-animal-edit">Edit</a></li>
+         </ul>
+      </header>
+   </section>
+
+
+
+
+   <!-- MODAL POPUP -->
+<!--       <div class="modal" id="remove-modal">
+         <div class="modal-back" data-deactivate="#remove-modal"></div>
+         <form class="modal-popup form" id="list-add-form" data-ajax="false">
+            <div class="modal-body">
+               <p class="modal-body-text">This item will be deleted from your list.</p>
+            </div>
+            <div class="modal-foot">
+               <button type="submit" class="form-button">Save</button>
+            </div>
+         </form>
+      </div> -->
 
 
 
@@ -198,30 +320,6 @@
             </form>
          </div>
    </section>
-
-
-
-<!-- List Page -->
-
-   <section data-role="page" id="page-list">
-      <div data-role="main">
-         <div class="overscroll floater fill-parent">
-            <div class="animallist"></div>
-         </div>
-
-         <div class="floater bottom right">
-            <a href="#page-animal-add" class="btn-circle">&plus;</a>
-         </div>
-      </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
-   </section>
-
-   <section data-role="page" id="page-user-profile">
-      <div data-role="main" class="overscroll"></div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
-   </section>
-
-
 
 
 <!-- Edit Profile Page -->
@@ -417,7 +515,6 @@
          </form>
       </div>
    </section>
-
 
    <script type="text/template" id="footer-template">
       <ul class="nav-icon-set">
