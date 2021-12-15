@@ -1,25 +1,23 @@
 
 const makeAnimalList = templater((o)=>`
 <div class="animallist-item">
-   <a href="#" class="display-flex animal-jump" data-id="${o.id}">
-      <div class="flex-none animallist-item-image">
-         <img src="${o.img}" alt="">
-      </div>
-      <div class="flex-stretch animallist-item-body padding-md">
-         <div class="animallist-item-name">${o.name}</div>
-         <div class="animallist-item-breed"><strong>Breed:</strong> ${o.breed}</div>
-         <div class="animallist-item-color"><strong>Color:</strong> ${o.color}</div>
-      </div>
-   </a>
+<div class="display-flex animal-jump" data-id="${o.id}">
+   <div class="flex-none animallist-item-image">
+      <img src="${o.img}" alt="">
+   </div>
+   <div class="flex-stretch animallist-item-body padding-md">
+      <div class="animallist-item-name">${o.name}</div>
+      <div class="animallist-item-type"><strong>Type</strong> ${o.type}</div>
+      <div class="animallist-item-breed"><strong>Breed</strong> ${o.breed}</div>
+   </div>
+</div>
 </div>
 `);
 
 
 const makeUserProfile = (o) => `
-<div class="display-flex flex-vertical">
 <div class="user-profile-image">
    <img src="${o.img}" alt="">
-</div>
 </div>
 <div>
    <h2>${o.name}</h2>
@@ -29,14 +27,14 @@ const makeUserProfile = (o) => `
 `;
 
 
+
+
 const makeAnimalProfile = (o) => `
 <div>
    <h2>${o.name}</h2>
-   <div><strong>Breed</strong> ${o.breed}</div>
-   <div><strong>Gender</strong> ${o.gender}</div>
-   <div><strong>Color</strong> ${o.color}</div>
-   <div><strong>Description</strong> <p>${o.description}</p></div>
-   <div><strong>Uniqueness</strong> <p>${o.uniqueness}</p></div>
+   <div><strong>type</strong> ${o.type}</div>
+   <div><strong>breed</strong> ${o.breed}</div>
+   <div><strong>description</strong> <p>${o.description}</p></div>
 </div>
 `;
 
@@ -47,11 +45,12 @@ const makeAnimalPopup = o => `
    </div>
    <div class="flex-stretch animal-popup-body padding-md">
       <div class="animal-popup-name">${o.name}</div>
+      <div class="animal-popup-type"><strong>Type</strong> ${o.type}</div>
       <div class="animal-popup-breed"><strong>Breed</strong> ${o.breed}</div>
-      <div class="animal-popup-color"><strong>Color</strong> ${o.color}</div>
    </div>
 </div>
 `;
+
 
 
 const FormControlInput = ({namespace,name,displayname,type,placeholder,value}) => `
@@ -74,42 +73,31 @@ ${FormControlInput({
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type The Dog Name",
+   placeholder:"Type The Animal Name",
    value:o.name
+})}
+${FormControlInput({
+   namespace:namespace,
+   name:"type",
+   displayname:"Type",
+   type:"text",
+   placeholder:"Type The Animal Type",
+   value:o.type
 })}
 ${FormControlInput({
    namespace:namespace,
    name:"breed",
    displayname:"Breed",
    type:"text",
-   placeholder:"Type The Dog Breed",
+   placeholder:"Type The Animal Breed",
    value:o.breed
-})}
-<select id="${namespace}-gender" data-role="none">
-   <option>Female</option>
-   <option>Male</option>
-</select>
-${FormControlInput({
-   namespace:namespace,
-   name:"color",
-   displayname:"Color",
-   type:"text",
-   placeholder:"Type The Dog Color",
-   value:o.color
 })}
 ${FormControlTextarea({
    namespace:namespace,
    name:"description",
    displayname:"Description",
-   placeholder:"Type The Dog Description",
+   placeholder:"Type The Animal Description",
    value:o.description
-})}
-${FormControlTextarea({
-   namespace:namespace,
-   name:"uniqueness",
-   displayname:"Uniqueness",
-   placeholder:"Type The Dog Uniqueness",
-   value:o.uniqueness
 })}
 `;
 
@@ -120,7 +108,7 @@ ${FormControlInput({
    name:"name",
    displayname:"Name",
    type:"text",
-   placeholder:"Type Your Name",
+   placeholder:"Type The User Name",
    value:o.name
 })}
 ${FormControlInput({
@@ -128,7 +116,7 @@ ${FormControlInput({
    name:"username",
    displayname:"Username",
    type:"text",
-   placeholder:"Type Your Username",
+   placeholder:"Type The User Handle",
    value:o.username
 })}
 ${FormControlInput({
@@ -136,10 +124,11 @@ ${FormControlInput({
    name:"email",
    displayname:"Email",
    type:"email",
-   placeholder:"Type Your Email Address",
+   placeholder:"Type The Email Address",
    value:o.email
 })}
 `;
+
 
 
 
@@ -169,7 +158,8 @@ const makeFilterList = (animals) => {
    return `
    <a href="#" data-filter="type" data-value="">All</a>
    <div>|</div>
-   ${filterList(animals,'breed')}
+   ${filterList(animals,'type')}
    <div>|</div>
-   ${filterList(animals,'color')}
+   ${filterList(animals,'breed')}
    `;
+}

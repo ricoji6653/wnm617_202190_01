@@ -1,37 +1,30 @@
-
-//DOCUMENT READY
+// DOCUMENT READY
 $(()=>{
-
-   // query({
-   //    type:'user_by_id',
-   //    params:[3]
-   // }).then(d=>{
- //      console.log(d)
- //      })
 
    checkUserId();
 
-   //EVENT DELIGATION
+   // Event Delegation
    $(document)
 
 
    .on("pagecontainerbeforeshow",function(event, ui){
-      //Page Routing
+      // Page Routing
       switch(ui.toPage[0].id) {
-         case "page-map": RecentPage(); break;
+         case "page-recent": RecentPage(); break;
          case "page-list": ListPage(); break;
          case "page-user-profile": UserProfilePage(); break;
          case "page-user-edit": UserEditPage(); break;
          case "page-animal-profile": AnimalProfilePage(); break;
          case "page-animal-edit": AnimalEditPage(); break;
          case "page-animal-add": AnimalAddPage(); break;
-         case "page-location-set-location": LocationSetLocationPage(); break;
          case "page-location-choose-animal": LocationChooseAnimalPage(); break;
+         case "page-location-set-location": LocationSetLocationPage(); break;
+
       }
-      })
+   })
 
 
-   //FORM SUBMIT
+   // FORM SUBMITS
    .on("submit","#signin-form",function(e) {
       e.preventDefault();
       checkSigninForm();
@@ -63,7 +56,7 @@ $(()=>{
    })
 
 
-      // FORM ANCHOR CLICKS
+   // FORM ANCHOR CLICKS
 
    .on("click",".js-submituseredit",function(e) {
       e.preventDefault();
@@ -83,6 +76,7 @@ $(()=>{
       if(value=="") ListPage();
       else checkFilter(filter,value);
    })
+
 
    .on("change",".image-picker input",function(e){
       checkUpload(this.files[0])
@@ -126,78 +120,79 @@ $(()=>{
          history.go(-2);
       })
    })
-   
-
-      // ON CHANGE
-
-      .on("change","#location-animal-choice-select",function(e){
-         $("#location-animal-choice").val(this.value)
-      })
 
 
-   //ANCHOR CLICKS
+
+   // ON CHANGE
+
+   .on("change","#location-animal-choice-select",function(e){
+      $("#location-animal-choice").val(this.value)
+   })
+
+
+   // ANCHOR CLICKS
    .on("click",".js-logout",function(e) {
       e.preventDefault();
       sessionStorage.removeItem("userId");
-         checkUserId();
+      checkUserId();
    })
    .on("click",".animal-jump",function(e) {
-         if(!$(this).data("id")) throw("No ID on element");
-         sessionStorage.animalId = $(this).data("id");
-         $.mobile.navigate("#page-animal-profile");
-      })
-      .on("click","[data-setnavigateback]",function(e){
-         $("#location-navigateback").val($(this).data("setnavigateback"))
-      })
-      .on("click",".js-navigate-back",function(e){
-         window.history.go(+$("#location-navigateback").val());
-      })
+      if(!$(this).data("id")) throw("No ID on element");
+      sessionStorage.animalId = $(this).data("id");
+      $.mobile.navigate("#page-animal-profile");
+   })
+   .on("click","[data-setnavigateback]",function(e){
+      $("#location-navigateback").val($(this).data("setnavigateback"))
+   })
+   .on("click",".js-navigate-back",function(e){
+      window.history.go(+$("#location-navigateback").val());
+   })
 
 
-      .on("click",".js-chooseanimal",function(e){
-         $("#location-animal-choice").val(sessionStorage.animalId);
-      })
+   .on("click",".js-chooseanimal",function(e){
+      $("#location-animal-choice").val(sessionStorage.animalId);
+   })
 
 
-       .on("click",".animal-profile-middle li",function(e){
-         let id = $(this).index();
-         $(this).addClass("active")
-            .siblings().removeClass("active");
-         $(this).closest(".animal-profile-middle").next().children().eq(id).addClass("active")
-            .siblings().removeClass("active");
-      })
+   .on("click",".animal-profile-middle li",function(e){
+      let id = $(this).index();
+      $(this).addClass("active")
+         .siblings().removeClass("active");
+      $(this).closest(".animal-profile-middle").next().children().eq(id).addClass("active")
+         .siblings().removeClass("active");
+   })
 
 
 
    .on("click","[data-activate]",function(e){
       let target = $(this).data("activate");
-      $(target).addClass("active")
+      $(target).addClass("active");
    })
    .on("click","[data-deactivate]",function(e){
       let target = $(this).data("deactivate");
-      $(target).removeClass("active")
+      $(target).removeClass("active");
    })
    .on("click","[data-toggle]",function(e){
       let target = $(this).data("toggle");
-      $(target).toggleClass("active")
+      $(target).toggleClass("active");
    })
-    .on("click","[data-activateone]",function(e){
+   .on("click","[data-activateone]",function(e){
       let target = $(this).data("activateone");
-      console.log(target)
       $(target).addClass("active").siblings().removeClass('active');
-      })
-
+   })
    ;
+
 
    $("[data-template]").each(function(){
       let target = $(this).data("template");
       $(this).html($(target).html());
-      })
+   })
 
    $({
-      "#page-map":".nav-icon-set li:nth-child(1)",
-         "#page-list":".nav-icon-set li:nth-child(2)",
-         "#page-user-profile":".nav-icon-set li:nth-child(3)",
+      "#page-recent":".nav-icon-set li:nth-child(1)",
+      "#page-list":".nav-icon-set li:nth-child(2)",
+      "#page-user-profile":".nav-icon-set li:nth-child(3)",
    }[location.hash]).addClass("active");
+
 
 });

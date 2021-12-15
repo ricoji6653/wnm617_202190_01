@@ -1,16 +1,13 @@
 
 const animalAddForm = async () => {
    let name = $("#animal-add-name").val();
+   let type = $("#animal-add-type").val();
    let breed = $("#animal-add-breed").val();
-   let gender = $("#animal-add-gender").val();
-   let color = $("#animal-add-name").val();
-   let description = $("#animal-add-color").val();
-   let uniqueness = $("#animal-add-uniqueness").val();
-   // console.log(name,breed,description,unique)
+   let description = $("#animal-add-description").val();
 
    let r = await query({
       type:'insert_animal',
-      params:[sessionStorage.userId,name,breed,gender,color,description,uniqueness]
+      params:[sessionStorage.userId,name,type,breed,description]
    });
 
    if(r.error) throw(r.error);
@@ -19,18 +16,15 @@ const animalAddForm = async () => {
    history.go(-1);
 }
 
-
 const animalEditForm = async () => {
    let name = $("#animal-edit-name").val();
+   let type = $("#animal-edit-type").val();
    let breed = $("#animal-edit-breed").val();
-   let gender = $("#animal-edit-gender").val();
-   let color = $("#animal-edit-name").val();
-   let description = $("#animal-edit-color").val();
-   let uniqueness = $("#animal-edit-uniqueness").val();
+   let description = $("#animal-edit-description").val();
 
    let r = await query({
       type:'update_animal',
-      params:[sessionStorage.userId,name,breed,gender,color,description,uniqueness]
+      params:[name,type,breed,description,sessionStorage.animalId]
    });
 
    if(r.error) throw(r.error);
@@ -38,22 +32,21 @@ const animalEditForm = async () => {
    history.go(-1);
 }
 
-
 const checkSignup = async () => {
    let email = $("#signup-email").val();
    let username = $("#signup-username").val();
    let password = $("#signup-password").val();
-   let confirm = $("#signup-password-2").val();
+   let confirm = $("#signup-password2").val();
 
    if(password!=confirm)
       throw("Passwords don't match: You should handle this in some way.");
-   
+
    let r = await query({
       type:'insert_user',
       params:[username,email,password]
    });
 
-   if(r.error) throw(r.error); 
+   if(r.error) throw(r.error);
 
    sessionStorage.userId = r.id;
 
@@ -73,8 +66,6 @@ const checkSignup2 = async () => {
 
    $.mobile.navigate("#page-list");
 }
-
-
 
 const userEditForm = async () => {
    let username = $("#user-edit-username").val();
@@ -107,7 +98,6 @@ const userEditPasswordForm = async () => {
    history.go(-1);
 }
 
-
 const locationAddForm = async () => {
    let animal = $("#location-animal-choice").val();
    let lat = $("#location-lat").val();
@@ -123,6 +113,8 @@ const locationAddForm = async () => {
 
    history.go($("#location-navigateback").val());
 }
+
+
 
 const checkSearchForm = async (s) => {
    let animals = await query({

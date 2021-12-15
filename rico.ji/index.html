@@ -17,9 +17,9 @@
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
    <script src="js/forms.js"></script>
-   <script src="js/map.js"></script>
+   <script src="js/maps.js"></script>
    <script src="js/signin.js"></script>
-
+   
    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQKUnMoaOZS1VZfMT29wfxNHibLX6b1i0"
       async
@@ -141,7 +141,7 @@
    </section>
 
 
-   <!-- Map -->
+   <!-- Map / Recent -->
    <section data-role="page" id="page-map">
       <div data-role="main">
          <div class="map">
@@ -196,14 +196,20 @@
          <div class="list" style="position: relative; display: flex; flex-direction: column; height: 100%; ">
             
 
-               <div class="search-bar header flex-none" style="padding-top: 1em; padding-bottom: 1em;">
-                  <form data-ajax="false" id="list-search-form" class="hotdog white">
-                     <input type="search" data-role="none" placeholder="Search">
+               <div class="search-bar header flex-none">
+                  <form data-ajax="false" id="list-search-form" class="hotdog medium">
+                     <input type="search" data-role="none" placeholder="Search for an animal">
                   </form>
                </div>
          
-         <div class="filter-bar header flex-none"></div>
-         <div class="position-relative flex-stretch" style="position: relative; flex: 1 1 100%;">
+         <div class="filter-bar header flex-none">
+               <a href="#">All</a>
+               <a href="#" data-filter="type" data-value="pug">Pug</a>
+               <a href="#" data-filter="type" data-value="bull">Bull</a>
+               <a href="#" data-filter="type" data-value="vizsla">Vizsla</a>
+               <a href="#" data-filter="type" data-value="others">Others</a>
+         </div>
+         <div class="position-relative flex-stretch" style="position: relative; flex: .5 .5 100%;">
             <div class="overscroll floater fill-parent">
                <div class="animallist">
                
@@ -224,16 +230,14 @@
 
    </section>
 
-   <!-- Profile -->
+   <!-- User Profile -->
    <section data-role="page" id="page-user-profile">
-      <div data-role="main" class="overscroll">
-      </div>
-
+      <div data-role="main" class="overscroll"></div>
       <footer data-role="footer" data-template="#footer-template"></footer>
-
    </section>
 
-   <!-- Profile Settings -->
+   <!-- Profile Settings Page -->
+
    <section data-role="page" id="page-user-settings">
       <header data-role="header">
          <h1>User Edit</h1>
@@ -243,15 +247,15 @@
       </header>
       <div data-role="main" class="overscroll">
          <ul class="nav-page-links">
-            <li><a href="#page-user-edit">Update User Info</a></li>
-            <li><a href="#page-user-edit-password">Change Password</a></li>
-            <li><a href="#page-user-upload">Change Photo</a></li>
-            <li><a href="#" class="js-logout">Logout</a></li>
+            <li style="margin-bottom:10px"><a href="#page-user-edit">Update User Info</a></li>
+            <li style="margin-bottom:10px"><a href="#page-user-edit-password">Change Password</a></li>
+            <li style="margin-bottom:10px"><a href="#page-user-upload">Change Photo</a></li>
+            <li style="margin-bottom:10px"><a href="#" class="js-logout">Logout</a></li>
          </ul>
       </div>
    </section>
 
-   <!-- Edit Profile -->
+   <!-- Edit Profile Page -->
    <section data-role="page" id="page-user-edit">
       <header data-role="header">
          <h1>Edit Profile</h1>
@@ -273,7 +277,7 @@
       </div>
    </section>
 
-   <!-- Upload Profile Pic -->
+   <!-- Upload Profile Photo Page-->
    <section data-role="page" id="page-user-upload">
       <header data-role="header">
          <h1>Upload Photo</h1>
@@ -320,7 +324,7 @@
    </section>
 
 
-   <!-- Animal Profile -->
+   <!-- Animal Profile Page -->
    <section data-role="page" id="page-animal-profile"> 
       <header data-role="header">
          <h1>Your dog</h1>
@@ -386,25 +390,34 @@
    </section>
 
 
-   <!-- Add New -->
+   <!-- Add New Dog Page -->
    <section data-role="page" id="page-animal-add">
       <header data-role="header">
-         <h1>Add New Dog</h1>
-
+         <h1>Add Dog</h1>
          <ul>
-            <li><a href="#" data-rel="back"> x </a></li>
+            <li><a href="#" data-rel="back">Cancel</a></li>
          </ul>
       </header>
       <div data-role="main">
          <form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
-                  
+                  <div class="form-control">
+                     <label for="animal-add-name" class="form-label">Name</label>
+                     <input type="text" id="animal-add-name" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-add-type" class="form-label">Type</label>
+                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-add-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Name">
+                  </div>
                </div>
             </div>
             <div class="flex-none padding-md">
-               <button type="submit" class="form-button">Save</button>
-               <!-- <a href="#page-list" class="form-button">Save</a> -->
+               <a href="#page-list" class="form-button">Save</a>
             </div>
          </form>
       </div>
@@ -413,23 +426,31 @@
 
    <section data-role="page" id="page-animal-edit">
       <header data-role="header">
-         <h1>Edit Animal!</h1>
+         <h1>Edit Dog</h1>
          <ul>
             <li><a href="#" data-rel="back">Cancel</a></li>
          </ul>
       </header>
       <div data-role="main">
          <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
-            <div style="padding:0.5rem 1rem;text-align:right;font-size:0.9em;">
-               <a href="#" class="js-animal-delete">Delete Animals?</a>
-            </div>
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
-                  
+                  <div class="form-control">
+                     <label for="animal-edit-name" class="form-label">Name</label>
+                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-type" class="form-label">Type</label>
+                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-edit-breed" class="form-label">Breed</label>
+                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
+                  </div>
                </div>
             </div>
             <div class="flex-none padding-md">
-               <button type="submit" class="form-button">Save</button>
+               <a href="#page-list" class="form-button">Save</a>
             </div>
          </form>
       </div>
