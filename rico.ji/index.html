@@ -16,8 +16,14 @@
    <script src="js/functions.js"></script>
    <script src="js/pages.js"></script>
    <script src="js/parts.js"></script>
+   <script src="js/forms.js"></script>
    <script src="js/map.js"></script>
    <script src="js/signin.js"></script>
+
+   <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQKUnMoaOZS1VZfMT29wfxNHibLX6b1i0"
+      async
+    ></script>
    
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
@@ -27,12 +33,9 @@
 
 
 <body>
-   
 
-
-<!-- Sign In Page -->
-   
-   <section data-role="page" id="page-signin">
+   <!-- Sign In -->
+    <section data-role="page" id="page-signin">
       <div data-role="main" class="display-flex flex-vertical">
          <div class="signin-background"></div>
          <div class="flex-stretch"></div>
@@ -68,20 +71,20 @@
       </div>
    </section>
 
-   
 
 
-<!-- Sign Up Page -->
-   
+
+
+   <!-- Sign Up -->
    <section data-role="page" id="page-signup">
       <div data-role="main" class="display-flex flex-vertical">
          <div class="flex-stretch"></div>
 
-         <div class="wrapper">
+         <!-- <div class="wrapper"> -->
             <h2 style="text-align: center; color: var(--color-main-dark);">
                Create a New Account
             </h2>
-            <form data-ajax="false" class="form" id="signup-form" style="padding:20px;">
+            <form data-ajax="false" class="form signin-form" id="signup-form" style="padding:10px;">
 
                <div class="form-control">
                   <label for="signup-email" class="form-label">Email Address</label>
@@ -94,181 +97,53 @@
                </div>
 
                <div class="form-control">
-                  <input type="submit" value="Sign Up" class="form-button">
+                  <label for="signup-password2" class="form-label">Confirm Password</label>
+                  <input class="form-input" type="password" id="signup-password-2" data-role="none" placeholder="Confirm Password">
                </div>
 
                <div class="form-control">
+                  <input type="submit" value="Sign Up" class="form-button" data-role="none">
+               </div>
                
-                  <p style="text-align: center; font-size: 0.65em;">
-                     Welcome to Dog World !  
-                     <a href="#page-signin" style="font-weight: 650; text-decoration: underline;">Sign In</a>
+
+               <div class="form-control">
+               
+                  <p style="text-align: center; font-size: 0.85em;">
+                     Already have an account?  
+                     <a href="#page-signin" style="font-weight: 700; text-decoration: underline;">Sign In</a>
                   </p>
                </div>
             </form>
-         </div>
-
-
       </div>
    </section>
 
-   
-
-
-<!-- Page Recent -->
-   
-  <section data-role="page" id="page-recent">
-      <div data-role="main">
-         <div class="map"></div>
-
-         <div class="floater bottom right">
-            <a href="#page-location-choose-animal" class="btn-circle">&plus;</a>
-         </div>
-      </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
-   </section>
-
-
-<!-- Page List-->
-
-   <section data-role="page" id="page-list">
-      <header data-role="header">
-         <h1>Animal List</h1>
-      </header>
-
-      <div data-role="main">
-         <div class="flex-stretch form-control">
-               <form action="" class="form-search">
-                  <input class="search-bar" type="text" name="search" placeholder="Search" style="margin: 4px -3px;">
-               </form>
-         </div>
-
-         <div class="overscroll floater fill-parent">
-            <div class="animallist"></div>
-         </div>
-
-         <div class="floater bottom right">
-            <a href="#page-animal-add" class="btn-circle">&plus;</a>
-         </div>
-      </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
-   </section>
-
-<!-- ADD ANIMAL -->
-
-   <section data-role="page" id="page-animal-add">
-      <header data-role="header">
-         <h1>Add Animal</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Cancel</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         <form class="fill-parent display-flex flex-vertical" id="animal-add-form2" data-ajax="false">
-            <div class="flex-stretch position-relative">
-               <div class="fill-parent overscroll position-absolute padding-md">
-                  <div class="form-control">
-                     <input class="form-input-lined" type="text" id="add-animal-name" data-role="none" placeholder="Name"><span class="label-animal-name"></span>
-                  </div>
-                  <div class="form-control">
-                     <input class="form-input-lined" type="text" id="add-animal-type" data-role="none" placeholder="Type"><span class="label-animal-name"></span>
-                  </div>
-                  <div class="form-control">
-                     <input class="form-input-lined" type="text" id="add-animal-breed" data-role="none" placeholder="Breed"><span class="label-animal-breed"></span>
-                  </div>
-               </div>
-            </div>
-            <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
-            </div>
-         </form>
-      </div>
-   </section>
-
-
-<!-- EDIT ANIMAL -->
-      <section data-role="page" id="page-animal-edit">
-      <header data-role="header">
-         <h1>Edit Animal</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Cancel</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
-            <div class="flex-stretch position-relative">
-               <div class="fill-parent overscroll position-absolute padding-md">
-                  <div class="form-control">
-                     <label for="animal-edit-name" class="form-label">Name</label>
-                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-edit-type" class="form-label">Type</label>
-                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-edit-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-               </div>
-            </div>
-            <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
-            </div>
-         </form>
-      </div>
-   </section>
-
-<!-- ANIMAL PROFILE -->
-   <section data-role="page" id="page-animal-profile">
+   <section data-role="page" id="page-signup2">
       <div data-role="main" class="display-flex flex-vertical">
-         <div class="animal-profile-top">
-            <img src="https://via.placeholder.com/600x600?text=Animal" alt="" style="width:100%;height:100%;object-fit:cover">
-         </div>
-         <div class="animal-profile-middle">
-            <ul class="nav">
-               <li>map</li>
-               <li>description</li>
-            </ul>
-         </div>
-         <div class="animal-profile-bottom">
-            <div class="map"></div>
-            <div class="description"></div>
-         </div>
+         <div class="flex-stretch"></div>
+         <form data-ajax="false" class="form signin-form" id="signup-form2" style="padding:10px">
+            <div class="form-control">
+               <input type="hidden" id="signup-image-name">
+               <label class="image-picker thumbnail">
+                  <input type="file" data-role="none">
+               </label>
+            </div>
+            <div class="form-control">
+               <label for="signup-name" class="form-label">Name</label>
+               <input class="form-input" type="text" id="signup-name" data-role="none" placeholder="Your Name">
+            </div>
+            
+            <div class="form-control">
+               <input type="submit" value="Done" class="form-button" data-role="none">
+            </div>
+         </form>
+         <div class="flex-stretch"></div>
       </div>
-      <header data-role="header" class="floating-header">
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#page-animal-edit">Edit</a></li>
-         </ul>
-      </header>
    </section>
 
 
-
-
-   <!-- MODAL POPUP -->
-<!--       <div class="modal" id="remove-modal">
-         <div class="modal-back" data-deactivate="#remove-modal"></div>
-         <form class="modal-popup form" id="list-add-form" data-ajax="false">
-            <div class="modal-body">
-               <p class="modal-body-text">This item will be deleted from your list.</p>
-            </div>
-            <div class="modal-foot">
-               <button type="submit" class="form-button">Save</button>
-            </div>
-         </form>
-      </div> -->
-
-
-
-<!-- Map Main Page -->
-   
+   <!-- Map -->
    <section data-role="page" id="page-map">
       <div data-role="main">
-         Map!
          <div class="map">
             <div class="flex-stretch form-control">
                <form action="" class="form-search">
@@ -276,15 +151,6 @@
                </form>
             </div>
          </div>
-
-         <div class="floater" style="top: 25%;left: 30%;">
-            <a href="#" data-activate="#recent-add-modal"><img src="img/icon/mainpagemarker.svg" class="icon" style="width: 2em; height: 5em;"></a>
-         </div>
-
-         <div class="floater" style="top: 45%;left: 60%;">
-            <a href="#" data-activate="#recent-add-modal"><img src="img/icon/mainpagemarker.svg" class="icon" style="width: 2em; height: 5em;"></a>
-         </div>
-
          <div class="floater bottom right">
                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
             </div>
@@ -322,97 +188,228 @@
    </section>
 
 
-<!-- Edit Profile Page -->
 
-   <section data-role="page" id="page-user-profile">
-      <header data-role="header">
-         <h1>Profile</h1>
-      </header>
-
-      <div data-role="main" class="display-flex flex-vertical">
-         <div>
-            <div class="profile-pic">  </div>
-               <h2 style="text-align: center;">John</h2>
-               <p> Member since: 2000</p>
-               <p> Email: john19990909@gmail.com</p>
-               <p> Location: San Jose</p>
-         </div>
+   <!-- List -->
+   <section data-role="page" id="page-list"> 
+      <div data-role="main">
          
-         <div class="flex-stretch"></div>
-      
-         <form data-ajax="false" class="form" id="edit-profile" style="padding:20px;">
-            <div class="form-control">
-               <button class="form-button js-logout" style="margin-top: 10px;">Log Out</button>
+         <div class="list" style="position: relative; display: flex; flex-direction: column; height: 100%; ">
+            
+
+               <div class="search-bar header flex-none" style="padding-top: 1em; padding-bottom: 1em;">
+                  <form data-ajax="false" id="list-search-form" class="hotdog white">
+                     <input type="search" data-role="none" placeholder="Search">
+                  </form>
+               </div>
+         
+         <div class="filter-bar header flex-none"></div>
+         <div class="position-relative flex-stretch" style="position: relative; flex: 1 1 100%;">
+            <div class="overscroll floater fill-parent">
+               <div class="animallist">
+               
+               </div>
             </div>
-         </form>
+         </div>
+
+         <div class="floater bottom right">
+            <a href="#page-animal-add" class="btn-circle">&plus;</a>
+         </div>
+
+      </div>
+   </div>
+
+      <footer data-role="footer" data-template="#footer-template"></footer>
+
+      
+
+   </section>
+
+   <!-- Profile -->
+   <section data-role="page" id="page-user-profile">
+      <div data-role="main" class="overscroll">
       </div>
 
       <footer data-role="footer" data-template="#footer-template"></footer>
 
    </section>
 
-   
-
-
-<!-- ANIMAL PAGES -->
-
-   <section data-role="page" id="page-animal-profile">
-      <div data-role="main" class="display-flex flex-vertical">
-         <div class="animal-profile-top">
-            <img src="https://via.placeholder.com/600x600?text=Animal" alt="" style="width:100%;height:100%;object-fit:cover">
-         </div>
-         <div class="animal-profile-middle">
-            <ul class="nav">
-               <li>map</li>
-               <li>description</li>
-            </ul>
-         </div>
-         <div class="animal-profile-bottom">
-            <div class="map"></div>
-            <div class="description"></div>
-         </div>
-      </div>
-      <header data-role="header" class="floating-header">
+   <!-- Profile Settings -->
+   <section data-role="page" id="page-user-settings">
+      <header data-role="header">
+         <h1>User Edit</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#page-animal-edit">Edit</a></li>
+            <li><a href="#" data-rel="back"> &lt; </a></li>
          </ul>
       </header>
+      <div data-role="main" class="overscroll">
+         <ul class="nav-page-links">
+            <li><a href="#page-user-edit">Update User Info</a></li>
+            <li><a href="#page-user-edit-password">Change Password</a></li>
+            <li><a href="#page-user-upload">Change Photo</a></li>
+            <li><a href="#" class="js-logout">Logout</a></li>
+         </ul>
+      </div>
    </section>
 
+   <!-- Edit Profile -->
+   <section data-role="page" id="page-user-edit">
+      <header data-role="header">
+         <h1>Edit Profile</h1>
+         <ul>
+            <li><a href="#" data-rel="back"> &lt; </a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submituseredit">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
+
+   <!-- Upload Profile Pic -->
+   <section data-role="page" id="page-user-upload">
+      <header data-role="header">
+         <h1>Upload Photo</h1>
+         <ul>
+            <li><a href="#" data-rel="back"> &lt; </a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submituserupload">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         <input type="hidden" id="user-upload-filename">
+         <label class="image-picker replace">
+            <input type="file" data-role="none">
+         </label>
+      </div>
+   </section>
+
+   <section data-role="page" id="page-user-edit-password">
+      <header data-role="header">
+         <h1>Edit Password</h1>
+         <ul>
+            <li><a href="#" data-rel="back"> &lt; </a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submituserpassword">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+         
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-password-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="user-password-initial" class="form-label">Type Password</label>
+                     <input type="password" id="user-password-initial" class="form-input" data-role="none" placeholder="Type A New Password">
+                  </div>
+                  <div class="form-control">
+                     <label for="user-password-confirm" class="form-label">Confirm Password</label>
+                     <input type="password" id="user-password-confirm" class="form-input" data-role="none" placeholder="Confirm New Password">
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+   <!-- Animal Profile -->
+   <section data-role="page" id="page-animal-profile"> 
+      <header data-role="header">
+         <h1>Your dog</h1>
+
+         <ul>
+            <li class="back-btn"><a href="#" data-rel="back"> &lt; </a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-animal-edit">Edit</a></li>  
+         </ul>
+
+      </header>
+      <div data-role="main" class="display-flex flex-vertical">
+         <div class="animal-profile-top">
+
+            <img src="https://via.placeholder.com/600x600?text=Animal" alt="" style="width:100%;height:100%;object-fit:cover">
+            <div class="floater bottom right">
+               <a href="#page-animal-edit-upload" style="font-size:1.25em">
+                  <img src="img/icon/pencil.svg" class="icon">
+               </a>
+            </div>
+            
+         </div>
+
+         <div class="animal-profile-middle">
+            <ul class="nav">
+               <li class="active">Description</li>
+               <li>Location</li>
+            </ul>
+         </div>
+
+         <div class="animal-profile-bottom">
+            <div class="section active">
+               <div class="description"></div>
+               
+            </div>
+            <div class="section">
+               <div class="map"></div>
+               <div class="floater bottom right">
+                  <a href="#page-location-set-location" class="btn-circle js-chooseanimal" data-setnavigateback="-2">&plus;</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </section>
+
+
+   <section data-role="page" id="page-animal-edit-upload">
+         <header data-role="header">
+            <h1>Upload Photo</h1>
+            <ul>
+               <li><a href="#" data-rel="back">Back</a></li>
+               <li class="flex-stretch"></li>
+               <li><a href="#" class="js-submitanimalupload">Save</a></li>
+            </ul>
+         </header>
+         <div data-role="main">
+            <input type="hidden" id="animal-upload-filename">
+            <label class="image-picker replace">
+               <input type="file" data-role="none">
+            </label>
+         </div>
+   </section>
+
+
+   <!-- Add New -->
    <section data-role="page" id="page-animal-add">
       <header data-role="header">
-         <h1>Add Animal!</h1>
+         <h1>Add New Dog</h1>
+
          <ul>
-            <li><a href="#" data-rel="back">Cancel</a></li>
+            <li><a href="#" data-rel="back"> x </a></li>
          </ul>
       </header>
       <div data-role="main">
          <form class="fill-parent display-flex flex-vertical" id="animal-add-form" data-ajax="false">
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
-                  <div class="form-control">
-                     <label for="animal-add-name" class="form-label">Name</label>
-                     <input type="text" id="animal-add-name" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-add-type" class="form-label">Type</label>
-                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-add-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Name">
-                  </div>
+                  
                </div>
             </div>
             <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
+               <button type="submit" class="form-button">Save</button>
+               <!-- <a href="#page-list" class="form-button">Save</a> -->
             </div>
          </form>
       </div>
    </section>
+
 
    <section data-role="page" id="page-animal-edit">
       <header data-role="header">
@@ -423,43 +420,43 @@
       </header>
       <div data-role="main">
          <form class="fill-parent display-flex flex-vertical" id="animal-edit-form" data-ajax="false">
+            <div style="padding:0.5rem 1rem;text-align:right;font-size:0.9em;">
+               <a href="#" class="js-animal-delete">Delete Animals?</a>
+            </div>
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
-                  <div class="form-control">
-                     <label for="animal-edit-name" class="form-label">Name</label>
-                     <input type="text" id="animal-edit-name" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-edit-type" class="form-label">Type</label>
-                     <input type="text" id="animal-edit-type" class="form-input" data-role="none" placeholder="Name">
-                  </div>
-                  <div class="form-control">
-                     <label for="animal-edit-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-edit-breed" class="form-input" data-role="none" placeholder="Name">
-                  </div>
+                  
                </div>
             </div>
             <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
+               <button type="submit" class="form-button">Save</button>
             </div>
          </form>
       </div>
    </section>
 
-   <section data-role="page" id="page-location-choose-animal">
+
+<section data-role="page" id="page-location-choose-animal">
       <header data-role="header">
          <h1>Choose Animal</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back">&lt;</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#page-location-set-location">Next</a></li>
+            <li class="next-button"><a href="#page-location-set-location">Next</a></li>
          </ul>
       </header>
-      <div data-role="main">
-         Animal!
+      <div data-role="main" style="padding:1em">
+         <input type="hidden" id="location-animal-choice">
+         <div class="form-select location-animal-choice-select"></div>
+
+          <p style="text-align: center;">------------- Or ------------</p>
+
+         <div class="form-control">
+            <a href="#page-animal-add" class="form-button">Add a New Dog</a>
+         </div>
       </div>
    </section>
+
 
    <section data-role="page" id="page-location-set-location">
       <header data-role="header">
@@ -471,9 +468,12 @@
          </ul>
       </header>
       <div data-role="main">
-         Animal!
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
+         <div class="map"></div>
       </div>
    </section>
+
 
    <section data-role="page" id="page-location-description">
       <header data-role="header">
@@ -481,36 +481,16 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#page-list">Save</a></li>
+            <li><a href="#" class="js-submitlocationform">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
-         Animal!
-      </div>
-   </section>
+         <form action="" style="padding:1em">
+            <input type="hidden" id="location-navigateback" value="-3">
 
-
-   <!-- Add New Page -->
-   <section data-role="page" id="page-add-new">
-      <header data-role="header">
-         <h1>Add New Dog</h1>
-
-         <ul>
-            <li><a href="#" data-rel="back"> Back </a></li>
-         </ul>
-      </header>
-      <div data-role="main" class="display-flex flex-vertical">
-         Add
-         <div class="flex-stretch"></div>
-         <form data-ajax="false" class="form" id="add-new" style="padding:20px;">
             <div class="form-control">
-               <input class="form-input" type="text" id="dog-name" data-role="none" placeholder="Dog Name">
-            </div>
-            <div class="form-control">
-               <input class="form-input" type="text" id="dog-info" data-role="none" placeholder="Dog Info">
-            </div>
-            <div class="form-control">
-               <a href="#page-map" class="form-button">Done</a>
+               <label for="location-description" class="form-label">Describe the animal</label>
+               <textarea id="location-description" class="form-input" data-role="none" placeholder="What did it look like?"></textarea>
             </div>
          </form>
       </div>
@@ -518,20 +498,20 @@
 
    <script type="text/template" id="footer-template">
       <ul class="nav-icon-set">
-         <li><a href="#page-map">
+         <li><a href="#page-map" data-activateone=".nav-icon-set li:nth-child(1)">
                <span class="nav-icon"><img class="icon" src="img/icon/map.svg"></span>
                   <span class="nav-icon-label">Map</span>
             </a></li>
-            <li><a href="#page-list">
+            <li><a href="#page-list" data-activateone=".nav-icon-set li:nth-child(2)">
                <span class="nav-icon"><img class="icon" src="img/icon/list.svg"></span>
                <span class="nav-icon-label">List</span>
             </a></li>
-            <li><a href="#page-user-profile">
+            <li><a href="#page-user-profile" data-activateone=".nav-icon-set li:nth-child(3)">
             <span class="nav-icon"><img class="icon" src="img/icon/profile.svg"></span>
             <span class="nav-icon-label">Profile</span>
             </a></li>
          </ul>
    </script>
-   
+
 </body>
 </html>
