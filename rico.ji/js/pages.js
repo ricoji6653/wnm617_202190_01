@@ -19,7 +19,6 @@ const ListPage = async() => {
    makeAnimalListSet(animals);
 }
 
-
 const RecentPage = async() => {
    let result = await resultQuery({
       type:'recent_animal_locations',
@@ -32,7 +31,7 @@ const RecentPage = async() => {
       return r;
    },[]);
 
-   let mapEl = await makeMap("#page-recent .map");
+   let mapEl = await makeMap("#page-map .map");
    makeMarkers(mapEl,animals);
 
    let {infoWindow,map,markers} = mapEl.data();
@@ -146,3 +145,4 @@ const LocationChooseAnimalPage = async() => {
       })
    );
    $("#location-animal-choice").val(result[0].id);
+}

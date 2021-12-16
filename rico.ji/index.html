@@ -80,7 +80,6 @@
       <div data-role="main" class="display-flex flex-vertical">
          <div class="flex-stretch"></div>
 
-         <!-- <div class="wrapper"> -->
             <h2 style="text-align: center; color: var(--color-main-dark);">
                Create a New Account
             </h2>
@@ -89,6 +88,11 @@
                <div class="form-control">
                   <label for="signup-email" class="form-label">Email Address</label>
                   <input class="form-input" type="text" id="signup-email" data-role="none" placeholder="E-mail">
+               </div>
+
+               <div class="form-control">
+                  <label for="signup-username" class="form-label">Username</label>
+                  <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Username">
                </div>
 
                <div class="form-control">
@@ -144,12 +148,11 @@
    <!-- Map / Recent -->
    <section data-role="page" id="page-map">
       <div data-role="main">
-         <div class="map">
-            <div class="flex-stretch form-control">
-               <form action="" class="form-search">
-                  <input class="search-bar" type="text" name="search" placeholder="Search">
-               </form>
-            </div>
+         <div class="map"></div>
+         <div class="flex-stretch form-control">
+            <form action="" class="form-search">
+               <input class="search-bar" type="text" name="search" placeholder="Search">
+            </form>
          </div>
          <div class="floater bottom right">
                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
@@ -229,6 +232,7 @@
       
 
    </section>
+
 
    <!-- User Profile -->
    <section data-role="page" id="page-user-profile">

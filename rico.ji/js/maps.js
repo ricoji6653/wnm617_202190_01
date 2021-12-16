@@ -82,7 +82,6 @@ const setMapBounds = (mapEl,mapLocs) => {
 
 
 const mapStyles = [
-[
     {
         "featureType": "landscape",
         "stylers": [
@@ -185,4 +184,4 @@ const mapStyles = [
             }
         ]
     }
-]
+];

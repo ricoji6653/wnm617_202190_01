@@ -10,7 +10,7 @@ $(()=>{
    .on("pagecontainerbeforeshow",function(event, ui){
       // Page Routing
       switch(ui.toPage[0].id) {
-         case "page-recent": RecentPage(); break;
+         case "page-map": RecentPage(); break;
          case "page-list": ListPage(); break;
          case "page-user-profile": UserProfilePage(); break;
          case "page-user-edit": UserEditPage(); break;
